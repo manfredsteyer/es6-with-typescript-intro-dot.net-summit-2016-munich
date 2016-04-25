@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>TypeScript-Demo</title>
+    </head>
+    <body>
+        
+        <h1>Schau mal auf die Konsole</h1>
+        
+        <div id="placeholder"></div>
+        
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        
+        <script>
+                   
+            System.config({
+                packages: {        
+                    app: {
+                        format: 'register', // System.register
+                        defaultExtension: 'js'
+                    }
+                }
+            });                   
+                    
+            System.import('app/main').catch(function(err) { 
+                console.error(err); 
+            });
+
+        </script>
+    </body>        
+</html>
